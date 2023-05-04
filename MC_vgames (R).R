@@ -4,7 +4,7 @@ library(caret)
 library(ggpubr)
 library(randomForest)
 
-setwd("C:/Users/minhk/OneDrive/Data Science stuffs/PORTFOLIO/ML - Video games sales")
+setwd("C:/Users/minhk/Documents/GitHub/ML - Video games sales")
 orig <- read.csv("vgsales.csv")
 
 options(digits = 3)
@@ -712,7 +712,9 @@ ggarrange(na.genres,
           jp.genres,
           other.genres,
           glo.genres,
-          legend = NULL) %>%
+          legend = NULL,
+          ncol = 2,
+          nrow = 3) %>%
   annotate_figure(top = text_grob("Total Video Game Sales (in millions) by Genres",
                                   color = "black",
                                   face = "bold",
@@ -742,7 +744,9 @@ ggarrange(na.pus,
           jp.pus,
           other.pus,
           glo.pus,
-          legend = NULL) %>%
+          legend = NULL,
+          nrow = 3,
+          ncol = 2) %>%
   annotate_figure(top = text_grob("Total Video Game Sales (in millions) by Top-10 Publishers",
                                   color = "black",
                                   face = "bold",
